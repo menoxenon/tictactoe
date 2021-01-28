@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="PL">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+    <link rel="icon" href="tmplogo.png" type="image" sizes="36x36">
+    <script src="https://kit.fontawesome.com/60f54f7c5a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="temporary.css">
+    <script src="tictactoe.js"></script>
+
+</head>
+
+<body>
+    <script>
+        whatIsUrName()
+    </script>
+
+    <div id="whowin">
+        <div class="winline">
+            <div class="score"><i class="fas fa-times"></i><span id="scorex">000</span></div>
+            <div class="who"><span id="nowplaying">Player</span></div>
+            <div class="score"><i class="fas fa-circle"></i><span id="scoreo">000</span></div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="line">
+            <div id="number1" class="ticchar" onclick="ticSelect(0)"></div>
+            <div id="number2" class="ticchar" onclick="ticSelect(1)"></div>
+            <div id="number3" class="ticchar" onclick="ticSelect(2)"></div>
+        </div>
+        <div class="line">
+            <div id="number4" class="ticchar" onclick="ticSelect(3)"></div>
+            <div id="number5" class="ticchar" onclick="ticSelect(4)"></div>
+            <div id="number6" class="ticchar" onclick="ticSelect(5)"></div>
+        </div>
+        <div class="line">
+            <div id="number7" class="ticchar" onclick="ticSelect(6)"></div>
+            <div id="number8" class="ticchar" onclick="ticSelect(7)"></div>
+            <div id="number9" class="ticchar" onclick="ticSelect(8)"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("nowplaying").innerHTML = player1
+    </script>
+
+    <div id="btndiv"><button class="reset" onclick="ticReset()" style="border-radius: 20px 0 0 0;"><span>New
+                game</span></button>
+        <h2>Made by Maciej Jarnot</h2><button class="clear" onclick="cler()"
+            style="border-radius: 0 20px 0 0;"><span>Clear</span></button>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
