@@ -1,15 +1,15 @@
-var player1 = "Player 1" //o
-    var player2 = "Player 2" //x
-    var counter = 0
+let player1 = "Player 1" //o
+    let player2 = "Player 2" //x
+    let counter = 0
     counter = counter * 1
 
-    var XScore = 0
-    var OScore = 0
+    let XScore = 0
+    let OScore = 0
 
 
-    var ticValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let ticValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    var ticTab = ["number1", "number2", "number3", "number4", "number5", "number6", "number7", "number8", "number9"]
+    let ticTab = ["number1", "number2", "number3", "number4", "number5", "number6", "number7", "number8", "number9"]
 
     function whatIsUrName() {
         player1 = prompt("Set first player name:", "")
@@ -17,7 +17,7 @@ var player1 = "Player 1" //o
     }
 
     function ticSelect(s) {
-        var cell = s / 1
+        let cell = s / 1
 
         if (ticValues[cell] == 0) {
             xOrO(counter, s)
@@ -69,9 +69,11 @@ var player1 = "Player 1" //o
         counter = 0;
 
         whatIsUrName();
+
+        //zmien nazwe gracza
     }
 
-    function winCheck() {
+    function winCheck() { //TO FIX!!!
         for (i = 1; i < 4; i++) {
             if (ticValues[(i * 3) - 3] == ticValues[(i * 3) - 2] && ticValues[(i * 3) - 2] == ticValues[(i * 3) - 1]) {
                 if (ticValues[(i * 3) - 3] == 0) {
