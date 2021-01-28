@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="icon" href="tmplogo.png" type="image" sizes="36x36">
+    <link rel="icon" href="logo.png" type="image" sizes="36x36">
     <script src="https://kit.fontawesome.com/60f54f7c5a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="temporary.css"> -->
@@ -20,27 +20,40 @@
     </script>
 
     <div id="sidemenubar">
-        <a href="index.html">Tic Tac Toe</a>
-        <form action="">
-            <p><label for="wBot">Do you want to play with bot? <input type="checkbox" name="wBot" id="wBot"
-                        checked></label>
+        <div id="uppermenu">
+            <a href="index.html"><img src="https://img.icons8.com/fluent/48/000000/hashtag-large.png" />
+                <p>Tic Tac Toe</p>
+            </a>
+            <form action="">
+                <p><label for="wBot">Do you want to play with bot? <input type="checkbox" name="wBot" id="wBot"></label>
 
-            </p>
+                </p>
 
-            <p>
-                <label for="player1">Enter player one name:</label>
-                <input type="text" name="player1" id="player1">
-            </p>
+                <p>
+                    <label for="player1">Enter player one name:</label>
+                    <input type="text" name="player1" id="player1">
+                </p>
 
-            <p>
-                <label for="player2">Enter player two name:</label>
-                <input type="text" name="player2" id="player2">
-            </p>
+                <p>
+                    <label for="player2">Enter player two name:</label>
+                    <input type="text" name="player2" id="player2">
+                </p>
 
-            <p>
-                <input type="submit" value="Submit">
-            </p>
-        </form>
+                <p>
+                    <input type="submit" value="Submit" onClick="playersSubmit(this.form)">
+                </p>
+            </form>
+            <div id="smth">
+                <p>Place for your advertisement ;)</p>
+            </div>
+        </div>
+
+        <div id="lowermenu">
+            <footer>
+                <p>Made by Maciej Jarnot</p>
+                <p><a class="cons8" href="https://icons8.com/">Icons used from icons8.com</a></p>
+            </footer>
+        </div>
     </div>
 
     <div id="maincnt">
@@ -72,7 +85,7 @@
 
         <div id="btndiv"><button class="reset" onclick="ticReset()"><span>New
                     game</span></button>
-            <button class="clear" onclick="cler()" "><span>Clear</span></button>
+            <button class="clear" onclick="cler(true)"><span>Clear/surrender(?)</span></button>
         </div>
     </div>
 

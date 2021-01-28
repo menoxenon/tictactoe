@@ -1,4 +1,4 @@
-let player1 = "Player 1" //o
+    let player1 = "Player 1" //o
     let player2 = "Player 2" //x
     let counter = 0
     counter = counter * 1
@@ -6,8 +6,7 @@ let player1 = "Player 1" //o
     let XScore = 0
     let OScore = 0
 
-
-    let ticValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let ticValues = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     let ticTab = ["number1", "number2", "number3", "number4", "number5", "number6", "number7", "number8", "number9"]
 
@@ -73,7 +72,7 @@ let player1 = "Player 1" //o
         //zmien nazwe gracza
     }
 
-    function winCheck() { //TO FIX!!!
+    function winCheck() {
         for (i = 1; i < 4; i++) {
             if (ticValues[(i * 3) - 3] == ticValues[(i * 3) - 2] && ticValues[(i * 3) - 2] == ticValues[(i * 3) - 1]) {
                 if (ticValues[(i * 3) - 3] == 0) {
@@ -103,9 +102,13 @@ let player1 = "Player 1" //o
         }
 
         for (i = 0; i < 9; i++) {
+            let poolCount = 0;
             if (ticValues[i] == 0) {
-                break;
-            } else if (i == 8 || ticValues[8] !== 0) {
+                break
+            } else {
+                poolCount++;
+            }
+            if (poolCount == 9){
                 cler()
             }
         }
@@ -143,7 +146,7 @@ let player1 = "Player 1" //o
         cler();
     }
 
-    function cler() {
+    function cler(countin = false) {
         for (i = 0; i < 9; i++) {
             document.getElementById(ticTab[i]).innerHTML = "";
         }
@@ -151,4 +154,14 @@ let player1 = "Player 1" //o
         for (i = 0; i < 9; i++) {
             ticValues[i] = 0;
         }
+
+        if (countin == true){
+            counter++;
+        }
+    }
+
+    function playersSubmit(form){
+        player1 = form.player1.value
+        player2 = form.player2.value
+        
     }

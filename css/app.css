@@ -6,6 +6,7 @@
 button {
   outline: none;
   cursor: pointer;
+  border: none;
 }
 
 input {
@@ -21,16 +22,21 @@ body {
   width: 100vw;
   display: flex;
   background-color: #E4E8AF;
+  background: linear-gradient(45deg, #c8db76 9%, #c8db76 9%, #927dc4 93%);
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
+  transition: all 0.3 ease;
 }
 
 body #sidemenubar {
   width: 300px;
   background-color: #a9a6c5;
   box-shadow: 0px 0px 6px 0px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 body #sidemenubar a {
@@ -41,6 +47,10 @@ body #sidemenubar a {
   text-decoration: none;
   font-size: 2rem;
   margin-top: 1rem;
+}
+
+body #sidemenubar a img {
+  height: 2rem;
 }
 
 body #sidemenubar form {
@@ -89,10 +99,44 @@ body #sidemenubar form input[type="submit"] {
   border-radius: 0;
   text-align: center;
   margin: auto;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 body #sidemenubar form input[type="submit"]:hover {
-  transform: translateY(6px);
+  transform: translateY(3px);
+}
+
+body #sidemenubar #smth {
+  background-color: white;
+  margin: 30px 10px;
+  padding: 10px 0;
+  border-radius: 4px;
+  text-align: center;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+body #sidemenubar #smth p {
+  margin: auto;
+}
+
+body #sidemenubar footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+body #sidemenubar footer p {
+  color: black;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+body #sidemenubar footer p .cons8 {
+  color: inherit;
+  font-size: 0.85rem;
+  padding-bottom: 4px;
 }
 
 body #maincnt {
@@ -134,13 +178,85 @@ body #maincnt #container .line .ticchar {
 }
 
 body #maincnt #container .line .ticchar:hover {
-  background-color: #97B996;
+  background-color: #d0cee07e;
   transition: 0.2s ease;
 }
 
 body #maincnt #container .line .ticchar i {
-  font-size: 60pt;
+  font-size: 4.4rem;
   margin: auto;
   color: whitesmoke;
-  text-shadow: 4px 4px black;
+  text-shadow: 1px 1px 3px black;
+}
+
+body #maincnt #whowin {
+  width: 668px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.548);
+  border-radius: 0 0 4px 4px;
+  background-color: #a9a6c5;
+  overflow: hidden;
+}
+
+body #maincnt #whowin .winline {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  height: 100%;
+}
+
+body #maincnt #whowin .winline .score {
+  display: flex;
+  height: 100%;
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+  color: #FFF;
+  font-size: 2rem;
+  align-items: center;
+}
+
+body #maincnt #whowin .winline .score i {
+  margin: auto;
+}
+
+body #maincnt #whowin .winline .score:last-of-type {
+  flex-direction: row-reverse;
+}
+
+body #maincnt #whowin .winline .who {
+  font-size: 1.8rem;
+  margin-top: 4px;
+}
+
+body #maincnt #btndiv {
+  display: flex;
+  justify-content: space-around;
+  width: 668px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+body #maincnt #btndiv button {
+  display: block;
+  height: 100%;
+  width: 200px;
+  font-size: 24px;
+  transition: 0.2s ease;
+  transform: translateY(10px);
+  border-radius: 1rem 1rem 0 0;
+}
+
+body #maincnt #btndiv button:hover {
+  transform: translateY(0);
+}
+
+body #maincnt #btndiv .reset {
+  background-color: rgba(92, 173, 255, 0.8);
+}
+
+body #maincnt #btndiv .clear {
+  background-color: rgba(255, 123, 100, 0.8);
 }
