@@ -89,7 +89,7 @@ body #sidemenubar form input[type="text"] {
   margin-top: 12px;
 }
 
-body #sidemenubar form input[type="submit"] {
+body #sidemenubar form #sendForm {
   border: none;
   width: 50%;
   font-size: 1.4rem;
@@ -102,7 +102,7 @@ body #sidemenubar form input[type="submit"] {
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-body #sidemenubar form input[type="submit"]:hover {
+body #sidemenubar form #sendForm:hover {
   transform: translateY(3px);
 }
 
@@ -178,15 +178,26 @@ body #maincnt #container .line .ticchar {
 }
 
 body #maincnt #container .line .ticchar:hover {
-  background-color: #d0cee07e;
+  background-color: #9e31eb32;
   transition: 0.2s ease;
 }
 
-body #maincnt #container .line .ticchar i {
-  font-size: 4.4rem;
+body #maincnt #container .line .ticchar img {
   margin: auto;
-  color: whitesmoke;
-  text-shadow: 1px 1px 3px black;
+  height: 72px;
+  width: 72px;
+}
+
+body #maincnt #container .line .ticCross:hover {
+  background-color: #C2173432;
+}
+
+body #maincnt #container .line .winClass {
+  background-color: #e9f545;
+}
+
+body #maincnt #container .line .winClass:hover {
+  background-color: #e9f545;
 }
 
 body #maincnt #whowin {
@@ -254,9 +265,11 @@ body #maincnt #btndiv button:hover {
 }
 
 body #maincnt #btndiv .reset {
-  background-color: rgba(92, 173, 255, 0.8);
+  background-color: #9E31EB;
+  color: white;
 }
 
 body #maincnt #btndiv .clear {
-  background-color: rgba(255, 123, 100, 0.8);
+  background-color: #C21734;
+  color: white;
 }

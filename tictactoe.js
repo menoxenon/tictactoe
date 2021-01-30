@@ -10,9 +10,16 @@
 
     let ticTab = ["number1", "number2", "number3", "number4", "number5", "number6", "number7", "number8", "number9"]
 
+    function hoverSwitch() {
+        for(let i = 0; i < 9; i++){
+            document.getElementById(ticTab[i]).classList.toggle('ticCross')
+        }
+    }
+
     function whatIsUrName() {
         player1 = prompt("Set first player name:", "")
         player2 = prompt("Set second player name:", "")
+        document.getElementById("nowplaying").innerHTML = player1
     }
 
     function ticSelect(s) {
@@ -20,6 +27,7 @@
 
         if (ticValues[cell] == 0) {
             xOrO(counter, s)
+            hoverSwitch()
             counter++
         } else {
             alert("Select another cell!");
@@ -38,16 +46,14 @@
             ticValues[which] = 2
             insertx(which)
         }
-
-        counter = counter % 2
     }
 
     function insertx(x) {
-        document.getElementById(ticTab[x]).innerHTML = '<i class="fas fa-times"></i>'
+        document.getElementById(ticTab[x]).innerHTML = '<img src="https://img.icons8.com/fluent/96/000000/delete-sign.png"/>'
     }
 
     function inserto(o) {
-        document.getElementById(ticTab[o]).innerHTML = '<i class="fas fa-circle"></i>'
+        document.getElementById(ticTab[o]).innerHTML = '<img src="https://img.icons8.com/fluent/96/000000/active-state.png"/>'
     }
 
     function ticReset() {
@@ -67,16 +73,15 @@
 
         counter = 0;
 
-        whatIsUrName();
-
-        //zmien nazwe gracza
+        //whatIsUrName();
     }
 
     function winCheck() {
+        let poolCount = 0
         for (i = 1; i < 4; i++) {
             if (ticValues[(i * 3) - 3] == ticValues[(i * 3) - 2] && ticValues[(i * 3) - 2] == ticValues[(i * 3) - 1]) {
                 if (ticValues[(i * 3) - 3] == 0) {
-                    break
+                    continue
                 } else {
                     ticWin((i * 3) - 3)
                 }
@@ -86,7 +91,7 @@
         for (i = 1; i < 4; i++) {
             if (ticValues[(i - 1)] == ticValues[(i + 2)] && ticValues[(i + 2)] == ticValues[(i + 5)]) {
                 if (ticValues[i + 5] == 0) {
-                    break
+                    continue
                 } else {
                     ticWin(i + 5)
                 }
@@ -102,15 +107,14 @@
         }
 
         for (i = 0; i < 9; i++) {
-            let poolCount = 0;
             if (ticValues[i] == 0) {
                 break
             } else {
-                poolCount++;
+                poolCount++
             }
             if (poolCount == 9){
                 cler()
-            }
+            } //tofix
         }
     }
 
@@ -125,43 +129,62 @@
     function winX() {
         XScore++;
         if (XScore < 100) {
-            XScore = "0" + XScore;
+            XScore = "0" + XScore
             if (XScore < 10) {
-                XScore = "0" + XScore;
+                XScore = "0" + XScore
             }
         }
-        document.getElementById("scorex").innerHTML = XScore;
+        document.getElementById("scorex").innerHTML = XScore
+        counter = counter % 2
         cler();
     }
 
     function winO() {
         OScore++;
         if (OScore < 100) {
-            OScore = "0" + OScore;
+            OScore = "0" + OScore
             if (OScore < 10) {
-                OScore = "0" + OScore;
+                OScore = "0" + OScore
             }
         }
-        document.getElementById("scoreo").innerHTML = OScore;
+        document.getElementById("scoreo").innerHTML = OScore
+        counter = counter % 2
         cler();
     }
 
     function cler(countin = false) {
         for (i = 0; i < 9; i++) {
-            document.getElementById(ticTab[i]).innerHTML = "";
+            document.getElementById(ticTab[i]).innerHTML = ""
         }
 
         for (i = 0; i < 9; i++) {
-            ticValues[i] = 0;
+            ticValues[i] = 0
         }
 
         if (countin == true){
-            counter++;
+            counter++
         }
     }
 
     function playersSubmit(form){
         player1 = form.player1.value
         player2 = form.player2.value
+        document.getElementById("nowplaying").innerHTML = player1
+    }
+
+    function bot () {
+        firstMove ()
         
+    }
+
+    function firstMove () {
+        if(ticValues[4] == 1) {
+            ticValues[2] = 2
+            document.getElementById(ticTab[2]).innerHTML = '<img src="https://img.icons8.com/fluent/96/000000/delete-sign.png"/>'
+            counter++
+        } else {
+            ticValues[0] = 2
+            document.getElementById(ticTab[0]).innerHTML = '<img src="https://img.icons8.com/fluent/96/000000/delete-sign.png"/>'
+            counter++ //random shit make here
+        }
     }

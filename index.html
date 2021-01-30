@@ -15,16 +15,13 @@
 </head>
 
 <body>
-    <script>
-        //whatIsUrName()
-    </script>
 
     <div id="sidemenubar">
         <div id="uppermenu">
             <a href="index.html"><img src="https://img.icons8.com/fluent/48/000000/hashtag-large.png" />
                 <p>Tic Tac Toe</p>
             </a>
-            <form action="">
+            <form action="#" 3 id="namesForm">
                 <p><label for="wBot">Do you want to play with bot? <input type="checkbox" name="wBot" id="wBot"></label>
 
                 </p>
@@ -40,11 +37,11 @@
                 </p>
 
                 <p>
-                    <input type="submit" value="Submit" onClick="playersSubmit(this.form)">
+                    <button onclick="playersSubmit(this.form)" id="sendForm">Submit</button>
                 </p>
             </form>
             <div id="smth">
-                <p>Place for your advertisement ;)</p>
+                <!-- <p>Place for your advertisement ;)</p> -->
             </div>
         </div>
 
@@ -59,9 +56,11 @@
     <div id="maincnt">
         <div id="whowin">
             <div class="winline">
-                <div class="score"><i class="fas fa-times"></i><span id="scorex">000</span></div>
+                <div class="score"><img src="https://img.icons8.com/fluent/96/000000/active-state.png" /><span
+                        id="scoreo">000</span></div>
                 <div class="who"><span id="nowplaying">Player</span></div>
-                <div class="score"><i class="fas fa-circle"></i><span id="scoreo">000</span></div>
+                <div class="score"><img src="https://img.icons8.com/fluent/96/000000/delete-sign.png" /><span
+                        id="scorex">000</span></div>
             </div>
         </div>
 
@@ -83,9 +82,8 @@
             </div>
         </div>
 
-        <div id="btndiv"><button class="reset" onclick="ticReset()"><span>New
-                    game</span></button>
-            <button class="clear" onclick="cler(true)"><span>Clear/surrender(?)</span></button>
+        <div id="btndiv"><button class="reset" onclick="ticReset()"><span>Score reset</span></button>
+            <button class="clear" onclick="cler(true)"><span>Surrender</span></button>
         </div>
     </div>
 

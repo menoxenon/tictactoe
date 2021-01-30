@@ -90,7 +90,7 @@ body {
                 margin-top: 12px;
             }
 
-            input[type="submit"] {
+            #sendForm {
                 border: none;
                 width: 50%;
                 font-size: 1.4rem;
@@ -179,15 +179,33 @@ body {
                     border-radius: 4px;
 
                     &:hover {
-                        background-color: #d0cee07e;
+                        background-color: #9e31eb32;
                         transition: 0.2s ease;
                     }
 
-                    i {
-                        font-size: 4.4rem;
+                    img {
                         margin: auto;
-                        color: whitesmoke;
-                        text-shadow: 1px 1px 3px black;
+                        height: 72px;
+                        width: 72px;
+                    }
+
+                    // i {
+                    //     font-size: 4.4rem;
+                    //     margin: auto;
+                    //     color: whitesmoke;
+                    //     text-shadow: 1px 1px 3px black;
+                    // }
+                }
+
+                .ticCross:hover {
+                    background-color: #C2173432;
+                }
+
+                .winClass {
+                    background-color: $colorfulGreen;
+
+                    &:hover {
+                        background-color: $colorfulGreen;
                     }
                 }
             }
@@ -264,12 +282,14 @@ body {
             }
 
             .reset {
-                background-color: rgba(92, 173, 255, 0.8);
+                background-color: #9E31EB;
+                color: white;
             }
             
             
             .clear {
-                background-color: rgba(255, 123, 100, 0.8);
+                background-color: #C21734;
+                color: white;
             }
         }
     }
