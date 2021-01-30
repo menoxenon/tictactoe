@@ -118,12 +118,21 @@
         }
     }
 
-    function ticWin(w) {
-        if (ticValues[w] == 1) {
-            winO()
-        } else if (ticValues[w] == 2) {
-            winX()
+    function ticWin(w = 0, isWin = true) {
+        if(isWin == false){
+            if(counter%2 == 1){
+                winO()
+            } else {
+                winX()
+            }
+        } else {
+            if (ticValues[w] == 1) {
+                winO()
+            } else if (ticValues[w] == 2) {
+                winX()
+            }
         }
+
     }
 
     function winX() {
@@ -136,7 +145,7 @@
         }
         document.getElementById("scorex").innerHTML = XScore
         counter = counter % 2
-        cler();
+        cler()
     }
 
     function winO() {
@@ -149,7 +158,7 @@
         }
         document.getElementById("scoreo").innerHTML = OScore
         counter = counter % 2
-        cler();
+        cler()
     }
 
     function cler(countin = false) {
@@ -162,7 +171,9 @@
         }
 
         if (countin == true){
+            ticWin(0, false)
             counter++
+            hoverSwitch()
         }
     }
 
@@ -188,3 +199,5 @@
             counter++ //random shit make here
         }
     }
+
+    //dodać dunkcje "you cant surrender after one move "
