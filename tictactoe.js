@@ -201,3 +201,4 @@
     }
 
     //dodać dunkcje "you cant surrender after one move "
+    //saintPope easteregg
